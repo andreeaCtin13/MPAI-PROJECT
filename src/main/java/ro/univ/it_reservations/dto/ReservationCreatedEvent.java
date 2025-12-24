@@ -1,4 +1,3 @@
 package ro.univ.it_reservations.dto;
 
-public class ReservationCreatedEvent {
-}
+public record ReservationCreatedEvent(Long reservationId) {}

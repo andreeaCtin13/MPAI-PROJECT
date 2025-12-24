@@ -31,7 +31,6 @@ public class EquipmentService {
         Equipment existing = findById(id);
         existing.setName(updated.getName());
         existing.setType(updated.getType());
-        existing.setAvailable(updated.isAvailable());
         return repo.save(existing);
     }
 

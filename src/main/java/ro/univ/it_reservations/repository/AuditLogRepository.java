@@ -1,4 +1,6 @@
 package ro.univ.it_reservations.repository;
 
-public class AuditLogRepository {
-}
+import org.springframework.data.jpa.repository.JpaRepository;
+import ro.univ.it_reservations.entity.AuditLog;
+
+public interface AuditLogRepository extends JpaRepository<AuditLog, Long> {}

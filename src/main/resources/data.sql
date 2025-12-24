@@ -1,8 +1,8 @@
-INSERT INTO EQUIPMENTS (name, type, available)
-VALUES ('Laptop Dell XPS', 'LAPTOP', TRUE);
+INSERT INTO equipments (name, type, usage_count, status)
+VALUES ('Laptop Dell XPS', 'LAPTOP', 0, 'AVAILABLE');
 
-INSERT INTO EQUIPMENTS (name, type, available)
-VALUES ('Projector BenQ', 'PROJECTOR', TRUE);
+INSERT INTO equipments (name, type, usage_count, status)
+VALUES ('Projector BenQ', 'PROJECTOR', 0, 'AVAILABLE');
 
-INSERT INTO EQUIPMENTS (name, type, available)
-VALUES ('Printer Canon', 'PRINTER', TRUE);
+INSERT INTO equipments (name, type, usage_count, status)
+VALUES ('Printer Canon', 'PRINTER', 0, 'AVAILABLE');

@@ -1,11 +1,14 @@
 package ro.univ.it_reservations.entity;
 
 import jakarta.persistence.*;
+import ro.univ.it_reservations.service.visitor.ReportVisitor;
+import ro.univ.it_reservations.service.visitor.Visitable;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reservations")
-public class Reservation {
+public class Reservation implements Visitable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,4 +44,9 @@ public class Reservation {
     public void setStartAt(LocalDateTime startAt) { this.startAt = startAt; }
     public void setEndAt(LocalDateTime endAt) { this.endAt = endAt; }
     public void setStatus(ReservationStatus status) { this.status = status; }
+
+    @Override
+    public void accept(ReportVisitor visitor) {
+        visitor.visit(this);
+    }
 }

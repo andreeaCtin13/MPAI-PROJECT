@@ -1,11 +1,14 @@
 package ro.univ.it_reservations.entity;
 
 import jakarta.persistence.*;
+import ro.univ.it_reservations.service.visitor.ReportVisitor;
+import ro.univ.it_reservations.service.visitor.Visitable;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "equipments")
-public class Equipment {
+public class Equipment implements Visitable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +41,9 @@ public class Equipment {
     public void setStatus(EquipmentStatus status) { this.status = status; }
     public void setUsageCount(long usageCount) { this.usageCount = usageCount; }
     public void setLastUsedAt(LocalDateTime lastUsedAt) { this.lastUsedAt = lastUsedAt; }
+
+    @Override
+    public void accept(ReportVisitor visitor) {
+        visitor.visit(this);
+    }
 }

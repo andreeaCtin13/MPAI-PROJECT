@@ -1,4 +1,4 @@
-package ro.univ.it_reservations.service;
+package ro.univ.it_reservations.service.observer.listener;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;

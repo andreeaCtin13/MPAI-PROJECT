@@ -1,7 +1,8 @@
-package ro.univ.it_reservations.service;
+package ro.univ.it_reservations.service.observer.listener;
 
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.univ.it_reservations.dto.ReservationStatusChangedEvent;
 import ro.univ.it_reservations.entity.Equipment;
 import ro.univ.it_reservations.entity.Reservation;
@@ -24,6 +25,7 @@ public class EquipmentUsageListener {
     }
 
     @EventListener
+    @Transactional
     public void onStatusChanged(ReservationStatusChangedEvent e) {
         if (e.newStatus() != ReservationStatus.FINISHED) return;
 
